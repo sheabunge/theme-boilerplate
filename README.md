@@ -42,7 +42,7 @@ The uncompiled SCSS source is stored in `assets/scss/`. The files are compiled i
 
 ### JavaScript
 
-Scripts are stored in `assets/js/source/`; vendor scripts in `assets/js/vendor/`. Grunt uses Uglify to concatenate a mixture of these scripts into `assets/js/plugins.min.js` and `assets/js/scripts.min.js`, and create source maps under `assets/js/map`
+Scripts are stored in `assets/js/source/`; vendor scripts in `assets/js/vendor/`. Grunt uses [UglifyJS](http://lisperator.net/uglifyjs/) to concatenate a mixture of these scripts into `assets/js/plugins.min.js` and `assets/js/scripts.min.js`, and create source maps under `assets/js/map`
 
 ### Theme Templates
 
