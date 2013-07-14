@@ -1,17 +1,19 @@
 /*
- * Theme Name:  Theme Boilerplate
- * Theme URI:   https://github.com/bungeshea/theme-boilerplate
- * Description: A starter theme I use when creating a custom theme for a site.
+ * Theme Name:        Theme Boilerplate
+ * Theme URI:         https://github.com/bungeshea/theme-boilerplate
+ * Description:       A starter theme I use when creating a custom theme for a site.
  *
- * Author:      Shea Bunge
- * Author URI:  http://bungeshea.com
+ * Support URI:       https://github.com/bungeshea/theme-boilerplate/issues
+ * Documentation URI: https://github.com/bungeshea/theme-boilerplate/wiki
+ * Author:            Shea Bunge
+ * Author URI:        http://bungeshea.com
  *
- * License:     MIT
- * License URI: http://opensource.org/licenses/MIT
+ * License:           MIT
+ * License URI:       http://opensource.org/licenses/MIT
  *
- * Version:     0.1
- * Text Domain: theme-boilerplate
- * Domain Path: /languages
+ * Version:           0.1
+ * Text Domain:       theme-boilerplate
+ * Domain Path:       /languages
  * Tags:
  */
 /* normalize.css v2.1.2 | MIT License | git.io/normalize */
@@ -494,6 +496,9 @@ table {
   clip: rect(1px, 1px, 1px, 1px);
 }
 .screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   top: 5px;
   left: 5px;
   z-index: 100000;
@@ -505,9 +510,6 @@ table {
   height: auto;
   border-radius: 3px;
   background-color: #f1f1f1;
-  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   color: #21759b;
   text-decoration: none;
   font-weight: bold;
