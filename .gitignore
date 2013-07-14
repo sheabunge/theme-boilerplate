@@ -10,6 +10,9 @@ node_modules/
 # Sublime Text
 *.sublime-workspace
 
+# GitHub wiki
+wiki/
+
 # OS
 Thumbs.db
 ehthumbs.db
