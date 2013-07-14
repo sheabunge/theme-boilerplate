@@ -1,0 +1,55 @@
+
+.button {
+
+	&, &:visited {
+		margin-bottom: 20px;
+		padding: 4px 12px;
+		border: 1px solid darken($link-color, 13%);
+		border-top-color: darken($link-color, 7%);
+		border-left-color: darken($link-color, 7%);
+		border-radius: 4px;
+		color: $white;
+		text-decoration: none;
+		text-shadow: 0 1px rgba(0,0,0, .75);
+		font-weight: bold;
+		font-size: 11px;
+		line-height: 21px;
+		cursor: pointer;
+	//	@include background(linear-gradient(to bottom, $link-color, darken($link-color, 5%)));
+		display: inline-block;
+	}
+
+	&:hover, &:focus {
+	  	border-top-color: darken($link-color, 20%);
+	 	border-left-color: darken($link-color, 20%);
+		color: $white;
+	//	@include background(linear-gradient(to bottom, darken($link-color, 5%), darken($link-color, 10%)));
+	  	border: 1px solid darken($link-color, 13%);
+	}
+
+	&:active {
+	//	@include background(linear-gradient(to bottom, darken($link-color, 5%), $link-color));
+	}
+
+}
+
+.blue-button {
+	@extend .button;
+
+	&, &:visited {
+		box-shadow: inset 0 0 3px lighten($blue, 16%);
+		text-shadow: 0 1px 1px darken($blue, 10%);
+	//	@include background(linear-gradient(to bottom,  $blue, darken($blue, 5%)));
+		border-color: darken($blue, 10%);
+	}
+
+	&:hover, &:focus {
+	//	@include background(linear-gradient(to bottom, darken($blue, 4%), darken($blue, 10%)));
+		border-color: darken($blue, 15%);
+	}
+
+	&:active {
+	//	@include background(linear-gradient(to bottom, darken($blue, 5%), $blue));
+	}
+
+}

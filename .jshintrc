@@ -1,0 +1,9 @@
+{
+	"smarttabs": true,
+	"eqeqeq": true,
+	"newcap": true,
+	"eqnull": true,
+	"globals": [
+		"module"
+	]
+}

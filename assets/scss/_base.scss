@@ -1,0 +1,91 @@
+@import 'compass/css3';
+
+// === Colors === //
+
+$white: #fff;
+
+$gray: #666;
+$gray-dark: #333;
+$gray-light: #eee;
+
+$blue: #4d8b97;
+$blue-dark: #335c64;
+
+// === Links === //
+
+$link-color: $blue;
+$link-hover: $blue-dark;
+
+/* === Fonts === */
+
+@import 'fonts';
+$font: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// === Media query breakpoints === //
+
+@import 'breakpoints';
+
+/* === Alerts and notices === */
+
+@import 'notices';
+
+/* === Buttons === */
+
+@import 'buttons';
+
+// === Clearfix === //
+
+@mixin clearfix() {
+	*zoom: 1;
+
+	&:before,
+	&:after {
+	    display: table;
+	    content: "";
+	}
+	&:after {
+	    clear: both;
+	}
+}
+
+/* === Border box all the things === */
+
+* {
+	@include box-sizing(border-box);
+}
+
+/* === Image replacement === */
+
+.image-replacement {
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+}
+
+/* === Text meant only for screen readers === */
+
+.screen-reader-text {
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+
+	&:hover,
+	&:active,
+	&:focus {
+		top: 5px;
+		left: 5px;
+		z-index: 100000; /* Above WP toolbar */
+		display: block;
+		clip: auto !important;
+		padding: 15px 23px 14px;
+		width: auto;
+		height: auto;
+		border-radius: 3px;
+		background-color: #f1f1f1;
+		@include box-shadow(0 0 2px 2px rgba(0, 0, 0, 0.6));
+		color: #21759b;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: normal;
+	}
+}

@@ -1,0 +1,35 @@
+@include font-face( 'Open Sans',
+	font-files(
+		'open-sans/OpenSans-Regular-webfont.woff', woff,
+		'open-sans/OpenSans-Regular-webfont.ttf', truetype,
+		'open-sans/OpenSans-Regular-webfont.svg', svg
+	),
+	'open-sans/OpenSans-Regular-webfont.eot'
+);
+
+@include font-face( 'Open Sans',
+	font-files(
+		'open-sans/OpenSans-Italic-webfont.woff', woff,
+		'open-sans/OpenSans-Italic-webfont.ttf', truetype,
+		'open-sans/OpenSans-Italic-webfont.svg', svg
+	),
+	'open-sans/OpenSans-Italic-webfont.eot', regular, italic
+);
+
+@include font-face( 'Open Sans',
+	font-files(
+		'open-sans/OpenSans-Bold-webfont.woff', woff,
+		'open-sans/OpenSans-Bold-webfont.ttf', truetype,
+		'open-sans/OpenSans-Bold-webfont.svg', svg
+	),
+	'open-sans/OpenSans-Bold-webfont.eot', bold, regular
+);
+
+@include font-face( 'Open Sans',
+	font-files(
+		'open-sans/OpenSans-BoldItalic-webfont.woff', woff,
+		'open-sans/OpenSans-BoldItalic-webfont.ttf', truetype,
+		'open-sans/OpenSans-BoldItalic-webfont.svg', svg
+	),
+	'open-sans/OpenSans-BoldItalic-webfont.eot', bold, italic
+);
