@@ -295,7 +295,14 @@ function boilerplate_header_image() {
  * @return void
  */
 function boilerplate_breadcrumb_trail() {
-	if ( current_theme_supports( 'breadcrumb-trail' ) ) {
+
+	/* Use the Yoast SEO breadcrumbs if they are enabled */
+	if ( function_exists( 'yoast_breadcrumb' ) ) {
+		yoast_breadcrumb( '<nav class="yoast-breadcrumb breadcrumbs">', '</nav>' );
+	}
+
+	/* Otherwise, use the Hybrid Core breadcrumbs */
+	elseif ( current_theme_supports( 'breadcrumb-trail' ) ) {
 
 		breadcrumb_trail( array(
 			'container' => 'nav',
