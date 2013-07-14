@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
 	'use strict';
 
+	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
@@ -104,13 +106,6 @@ module.exports = function(grunt) {
 		}
 
 	});
-
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-compass');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 	grunt.registerTask('default', ['jshint', 'uglify', 'compass', 'cssmin']);
 };
