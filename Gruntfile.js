@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 
 			styles: {
 				files: ['assets/scss/**/*.{scss,sass}'],
-				tasks: ['compass', 'cssmin'],
+				tasks: ['compile-css'],
 				options: {
 					debounceDelay: 500
 				}
@@ -82,6 +82,31 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/**
+		 * Copy the Compass-generated style.css and editor-style.css
+		 * files into the theme root to be picked up by WordPress
+		 */
+		copy: {
+			css: {
+				files: {
+					'style.css': ['assets/css/style.css'],
+					'editor-style.css': ['assets/css/editor-style.css']
+				}
+			}
+		},
+
+		/**
+		 * Remove the duplicate CSS files from assets/css/
+		 */
+		clean: {
+			css: {
+				src: ['assets/css/style.css', 'assets/css/editor-style.css']
+			}
+		},
+
+		/**
+		 * Minify style.css to be compatible with SCRIPT_DEBUG
+		 */
 		cssmin: {
 			dist: {
 				files: {
@@ -107,5 +132,6 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask('default', ['jshint', 'uglify', 'compass', 'cssmin']);
+	grunt.registerTask('compile-css', ['compass', 'copy:css', 'clean:css', 'cssmin'] );
+	grunt.registerTask('default', ['jshint', 'uglify', 'compile-css'] );
 };
