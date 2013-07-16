@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 
 			styles: {
 				files: ['scss/**/*.{scss,sass}'],
-				tasks: ['compass', 'cssmin'],
+				tasks: ['compile-css'],
 				options: {
 					debounceDelay: 500
 				}
@@ -82,6 +82,33 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/**
+		 * Fix the relative URLs and copy the CSS files into
+		 * the theme root
+		 */
+		replace: {
+			css: {
+				src: ['css/style.css', 'css/editor-style.css'],
+				dest: './',
+				replacements: [{
+					from: '../',
+					to: ''
+				}]
+			}
+		},
+
+		/**
+		 * Remove the duplicate CSS
+		 */
+		clean: {
+			css: {
+				src: ['<%= replace.css.src %>']
+			}
+		},
+
+		/**
+		 * Minify style.css to be compatible with SCRIPT_DEBUG
+		 */
 		cssmin: {
 			dist: {
 				files: {
@@ -107,5 +134,6 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask('default', ['jshint', 'uglify', 'compass', 'cssmin']);
+	grunt.registerTask('compile-css', ['compass', 'replace:css', 'clean:css', 'cssmin'] );
+	grunt.registerTask('default', ['jshint', 'uglify', 'compile-css'] );
 };
