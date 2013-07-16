@@ -1,11 +1,16 @@
 module.exports = function(grunt) {
 	'use strict';
 
+	/* Load all Grunt tasks */
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		/**
+		 * Watch for changes in files
+		 * and run tasks when they are modified
+		 */
 		watch: {
 
 			styles: {
@@ -38,6 +43,10 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/**
+		 * Lint the Gruntfile and
+		 * source JavaScript with JSHint
+		 */
 		jshint: {
 			options: {
 				jshintrc: '.jshintrc',
@@ -47,6 +56,9 @@ module.exports = function(grunt) {
 			source: ['js/source/**/*.js']
 		},
 
+		/**
+		 * Compress JavaScript and create source maps
+		 */
 		uglify: {
 
 			plugins: {
@@ -74,12 +86,11 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/**
+		 * Use Compass to compile Sass stylesheets
+		 */
 		compass: {
-			dist: {
-				options: {
-					config: 'config.rb'
-				}
-			}
+			dist: {}
 		},
 
 		/**
@@ -117,6 +128,12 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/**
+		 * Compress images to save bandwidth and
+		 * load times.
+		 *
+		 * This task must be ran manually using `grunt imagemin`
+		 */
 		imagemin: {
 		    dist: {
 		        options: {
