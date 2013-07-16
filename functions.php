@@ -146,7 +146,7 @@ function boilerplate_enqueue_scripts() {
 	/* Modernizr */
 	wp_register_script(
 		'modernizr',
-		get_template_directory_uri() . '/assets/js/vendor/modernizr-2.6.2.min.js',
+		get_template_directory_uri() . '/js/vendor/modernizr-2.6.2.min.js',
 		false,
 		'2.6.2'
 	);
@@ -155,7 +155,7 @@ function boilerplate_enqueue_scripts() {
 	/* Plugins */
 	wp_enqueue_script(
 		'boilerplate-plugins',
-		get_template_directory_uri() . '/assets/js/plugins.min.js',
+		get_template_directory_uri() . '/js/plugins.min.js',
 		array( 'jquery' ),
 		true // load in footer
 	);
@@ -163,7 +163,7 @@ function boilerplate_enqueue_scripts() {
 	/* Scripts */
 	wp_enqueue_script(
 		'boilerplate-scripts',
-		get_template_directory_uri() . '/assets/js/main.min.js',
+		get_template_directory_uri() . '/js/main.min.js',
 		array( 'jquery' ),
 		$ver,
 		true // load in footer

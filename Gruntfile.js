@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 		watch: {
 
 			styles: {
-				files: ['assets/scss/**/*.{scss,sass}'],
+				files: ['scss/**/*.{scss,sass}'],
 				tasks: ['compass', 'cssmin'],
 				options: {
 					debounceDelay: 500
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 			},
 
 			scripts: {
-				files: ['assets/js/source/**/*.js', 'assets/js/vendor/**/*.js'],
+				files: ['js/source/**/*.js', 'js/vendor/**/*.js'],
 				tasks: ['jshint', 'uglify'],
 				options: {
 					debounceDelay: 500
@@ -30,10 +30,10 @@ module.exports = function(grunt) {
 				},
 				files: [
 					'style.css',
-					'assets/js/*.js',
+					'js/*.js',
 					'*.html',
 					'*.php',
-					'assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}'
+					'images/**/*.{png,jpg,jpeg,gif,webp,svg}'
 				]
 			}
 		},
@@ -44,31 +44,31 @@ module.exports = function(grunt) {
 				'force': true
 			},
 			gruntfile: ['Gruntfile.js'],
-			source: ['assets/js/source/**/*.js']
+			source: ['js/source/**/*.js']
 		},
 
 		uglify: {
 
 			plugins: {
 				options: {
-					sourceMap: 'assets/js/map/source-map-plugins.js.map'
+					sourceMap: 'js/map/source-map-plugins.js.map'
 				},
 				files: {
-					'assets/js/plugins.min.js': [
-						'assets/js/source/plugins.js',
-						'assets/js/vendor/**/*.js',
-						'!assets/js/vendor/modernizr*.js'
+					'js/plugins.min.js': [
+						'js/source/plugins.js',
+						'js/vendor/**/*.js',
+						'!js/vendor/modernizr*.js'
 					]
 				}
 			},
 
 			main: {
 				options: {
-					sourceMap: 'assets/js/map/source-map-main.js.map'
+					sourceMap: 'js/map/source-map-main.js.map'
 				},
 				files: {
-					'assets/js/main.min.js': [
-						'assets/js/source/main.js'
+					'js/main.min.js': [
+						'js/source/main.js'
 					]
 				}
 			}
@@ -98,9 +98,9 @@ module.exports = function(grunt) {
 		        },
 		        files: [{
 		            expand: true,
-		            cwd: 'assets/images/',
+		            cwd: 'images/',
 		            src: '**/*',
-		            dest: 'assets/images/'
+		            dest: 'images/'
 		        }]
 		    }
 		}
