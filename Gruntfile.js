@@ -13,14 +13,34 @@ module.exports = function(grunt) {
 		 */
 		watch: {
 
+			/**
+			 * All stylesheets, excluding those needing
+			 * to be copied to theme root
+			 *
+			 * Save time by excluding the special style tasks
+			 */
 			styles: {
-				files: ['scss/**/*.{scss,sass}'],
+				files: ['scss/**/*.{scss,sass}', '!<%= replace.css.src %>'],
+				tasks: ['compass', 'cssmin'],
+				options: {
+					debounceDelay: 500
+				}
+			},
+
+			/**
+			 * Stylesheets that need to be copied to the theme root
+			 */
+			styles_extra: {
+				files: ['<%= replace.css.src %>'],
 				tasks: ['compile-css'],
 				options: {
 					debounceDelay: 500
 				}
 			},
 
+			/**
+			 * Vendor and source JavaScript
+			 */
 			scripts: {
 				files: ['js/source/**/*.js', 'js/vendor/**/*.js'],
 				tasks: ['jshint', 'uglify'],
@@ -29,6 +49,9 @@ module.exports = function(grunt) {
 				}
 			},
 
+			/**
+			 * Send commands to the LiveReload browser extension
+			 */
 			livereload: {
 				options: {
 					livereload: true
@@ -118,13 +141,23 @@ module.exports = function(grunt) {
 		},
 
 		/**
-		 * Minify style.css to be compatible with SCRIPT_DEBUG
+		 * Minify style.css and all files in the css/ directory
+		 * to be compatible with SCRIPT_DEBUG
+		 *
+		 * editor-style.css is not minified by convention
 		 */
 		cssmin: {
-			dist: {
+			style: {
 				files: {
 					'style.min.css': ['style.css']
 				}
+			},
+			css: {
+				expand: true,
+				cwd: 'css/',
+				src: ['*.css', '!*.min.css'],
+				dest: 'css/',
+				ext: '.min.css'
 			}
 		},
 
