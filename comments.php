@@ -5,7 +5,7 @@
  *
  * @since      0.1
  * @package    Theme_Boilerplate
- * @subpackage Comment_Templates
+ * @subpackage Comments
  */
 
 /* If a post password is required or no comments are given and comments/pings are closed, bail */

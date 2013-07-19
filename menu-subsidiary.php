@@ -5,7 +5,7 @@
  *
  * @since      0.1
  * @package    Theme_Boilerplate
- * @subpackage Menu_Templates
+ * @subpackage Navigation
  */
 
 if ( ! has_nav_menu( 'subsidiary' ) )

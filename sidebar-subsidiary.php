@@ -5,7 +5,7 @@
  *
  * @since      0.1
  * @package    Theme_Boilerplate
- * @subpackage Sidebar_Templates
+ * @subpackage Sidebars
  */
 
 if ( ! is_active_sidebar( 'subsidiary' ) )

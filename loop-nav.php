@@ -5,7 +5,7 @@
  *
  * @since      0.1
  * @package    Theme_Boilerplate
- * @subpackage Loop_Templates
+ * @subpackage Loops
  */
 
 if ( is_attachment() ) : ?>

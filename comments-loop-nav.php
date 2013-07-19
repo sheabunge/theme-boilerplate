@@ -5,7 +5,7 @@
  *
  * @since      0.1
  * @package    Theme_Boilerplate
- * @subpackage Comment_Templates
+ * @subpackage Comments
  */
 
 /* Bail early if comment paging is disabled or there is less then one comment page */

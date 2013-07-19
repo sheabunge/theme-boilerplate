@@ -5,7 +5,7 @@
  *
  * @since      0.1
  * @package    Theme_Boilerplate
- * @subpackage Global_Templates
+ * @subpackage Templates
  */
 
 ?><!DOCTYPE html>
