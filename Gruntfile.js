@@ -14,24 +14,10 @@ module.exports = function(grunt) {
 		watch: {
 
 			/**
-			 * All stylesheets, excluding those needing
-			 * to be copied to theme root
-			 *
-			 * Save time by excluding the special style tasks
+			 * Compile, minify, and move Sass stylesheets
 			 */
 			styles: {
-				files: ['scss/**/*.{scss,sass}', '!<%= replace.css.src %>'],
-				tasks: ['compass', 'cssmin'],
-				options: {
-					debounceDelay: 500
-				}
-			},
-
-			/**
-			 * Stylesheets that need to be copied to the theme root
-			 */
-			styles_extra: {
-				files: ['<%= replace.css.src %>'],
+				files: ['scss/**/*.{scss,sass}'],
 				tasks: ['compile-css'],
 				options: {
 					debounceDelay: 500
@@ -145,6 +131,7 @@ module.exports = function(grunt) {
 		 * to be compatible with SCRIPT_DEBUG
 		 *
 		 * editor-style.css is not minified by convention
+		 * Minify style.css to be compatible with SCRIPT_DEBUG
 		 */
 		cssmin: {
 			style: {
@@ -162,8 +149,7 @@ module.exports = function(grunt) {
 		},
 
 		/**
-		 * Compress images to save bandwidth and
-		 * load times.
+		 * Compress images to save bandwidth and load times.
 		 *
 		 * This task must be ran manually using `grunt imagemin`
 		 */
