@@ -110,16 +110,23 @@ function boilerplate_theme_setup() {
 		array( 'default-color' => 'ffffff' )
 	);
 
-	/* Jetpack's Infinite Scroll module */
+	/**
+	 * Jetpack's Infinite Scroll module
+	 * @link http://jetpack.me/support/infinite-scroll/
+	 */
 	add_theme_support(
 		'infinite-scroll',
 		array(
-			'container' => 'content',
-			'footer'    => 'container',
+			'container'      => 'content',
+			'footer'         => 'container',
+			'footer_widgets' => 'sidebar_subsidiary',
 		)
 	);
 
-	/* Jetpack's Photon module */
+	/**
+	 * Jetpack's Photon module
+	 * @link http://jetpack.me/2013/07/11/photon-and-themes/
+	 */
 	if ( function_exists( 'jetpack_photon_url' ) ) {
 	    add_filter( 'jetpack_photon_url', 'jetpack_photon_url', 10, 3 );
 	}
