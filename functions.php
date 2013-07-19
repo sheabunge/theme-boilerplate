@@ -119,6 +119,11 @@ function boilerplate_theme_setup() {
 		)
 	);
 
+	/* Jetpack's Photon module */
+	if ( function_exists( 'jetpack_photon_url' ) ) {
+	    add_filter( 'jetpack_photon_url', 'jetpack_photon_url', 10, 3 );
+	}
+
 	/* Handle content width for embeds and images */
 	hybrid_set_content_width( 1280 );
 
