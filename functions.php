@@ -9,7 +9,7 @@
  * Child themes should do their setup on the 'after_setup_theme' hook with a priority of 11 if they want to
  * override parent theme features.  Use a priority of 9 if wanting to run before the parent theme.
  *
- * @package    Boilerplate
+ * @package    Theme_Boilerplate
  * @subpackage Functions
  * @version    0.1
  * @since      0.1
