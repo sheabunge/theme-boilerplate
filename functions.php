@@ -133,12 +133,6 @@ function boilerplate_theme_setup() {
 
 	/* Handle content width for embeds and images */
 	hybrid_set_content_width( 1280 );
-
-	/** Hybrid Core 1.6 changes **/
-	add_filter( "{$prefix}_sidebar_defaults", 'boilerplate_sidebar_defaults' );
-	add_filter( 'cleaner_gallery_defaults',   'boilerplate_gallery_defaults' );
-	add_filter( 'the_content', 'boilerplate_aside_infinity', 9 );
-	/****************************/
 }
 
 add_action( 'after_setup_theme', 'boilerplate_theme_setup' );
@@ -183,96 +177,6 @@ function boilerplate_enqueue_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'boilerplate_enqueue_scripts' );
-
-/* === HYBRID CORE 1.6 CHANGES. ===
- *
- * The following changes are slated for Hybrid Core version 1.6 to make it easier for
- * theme developers to build awesome HTML5 themes. The code will be removed once 1.6
- * is released.
- */
-
-	/**
-	 * Content template.  This is an early version of what a content template function will look like
-	 * in future versions of Hybrid Core.
-	 *
-	 * @since  0.1
-	 * @access public
-	 * @return void
-	 */
-	function boilerplate_get_content_template() {
-
-		$templates = array();
-		$post_type = get_post_type();
-
-		if ( post_type_supports( $post_type, 'post-formats' ) ) {
-
-			$post_format = get_post_format() ? get_post_format() : 'standard';
-
-			$templates[] = "content-{$post_type}-{$post_format}.php";
-			$templates[] = "content-{$post_format}.php";
-		}
-
-		$templates[] = "content-{$post_type}.php";
-		$templates[] = 'content.php';
-
-		return locate_template( $templates, true, false );
-	}
-
-	/**
-	 * Sidebar parameter defaults.
-	 *
-	 * @since  0.1
-	 * @access public
-	 * @param  array  $defaults
-	 * @return array
-	 */
-	function boilerplate_sidebar_defaults( $defaults ) {
-
-		$defaults = array(
-			'before_widget' => '<section id="%1$s" class="widget %2$s widget-%2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>'
-		);
-
-		return $defaults;
-	}
-
-	/**
-	 * Gallery defaults for the Cleaner Gallery extension.
-	 *
-	 * @since  0.1
-	 * @access public
-	 * @param  array  $defaults
-	 * @return array
-	 */
-	function boilerplate_gallery_defaults( $defaults ) {
-
-		$defaults['itemtag']    = 'figure';
-		$defaults['icontag']    = 'div';
-		$defaults['captiontag'] = 'figcaption';
-
-		return $defaults;
-	}
-
-	/**
-	 * Adds an infinity character "&#8734;" to the end of the post content on 'aside' posts.  This
-	 * is from version 0.1.1 of the Post Format Tools extension.
-	 *
-	 * @since  0.1
-	 * @access public
-	 * @param  string $content The post content.
-	 * @return string $content
-	 */
-	function boilerplate_aside_infinity( $content ) {
-
-		if ( has_post_format( 'aside' ) && ! is_singular() )
-			$content .= '  <a class="permalink" href="' . get_permalink() . '" title="' . the_title_attribute( array( 'echo' => false ) ) . '">&#8734;</a>';
-
-		return $content;
-	}
-
-/* End Hybrid Core 1.6 section */
 
 /**
  * Output the HTML code for the custom header image
