@@ -10,7 +10,7 @@ For more information, see the [wiki](https://github.com/bungeshea/theme-boilerpl
 
 ## Clone the repo
 
-First of all, clone the boilerplate using Git into a new theme directory (replace my-awesome-theme with the slug of your theme):
+First of all, clone the boilerplate using Git into a new theme directory (replace `my-awesome-theme` with the slug of your theme):
 
 	git clone --recursive https://github.com/bungeshea/theme-boilerplate my-awesome-theme
 	cd my-awesome-theme
@@ -61,7 +61,7 @@ Scripts are stored in `js/source`; vendor scripts in `js/vendor`. Grunt uses [Ug
 
 ### Hybrid Core
 
-Theme Boilerplate uses [Hybrid Core](https://github.com/justintadlock/hybrid-core) to enhance the theme's functionality. Hybrid Core is stored as a Git submodule under `library`. The setting up of Hybrid Core is done in `functions.php`.
+Theme Boilerplate uses [Hybrid Core](https://github.com/justintadlock/hybrid-core) to enhance the theme's functionality. Hybrid Core is stored as a Git submodule under `library`. Setting up Hybrid Core is done in `functions.php`.
 
 ### Images
 
@@ -69,7 +69,7 @@ Images used within the theme should be stored under `images`. Running the `grunt
 
 ### Fonts
 
-Fonts, including icon fonts and textual fonts, are to be stored under `fonts`. The fantastic [Open Sans](http://opensans.com) font is included with the theme. If you want to add others, simply add the files under the `fonts` directory and edit `scss/_fonts.css` as appropriate. See the Compass website for information about using
+Fonts, including icon fonts and textual fonts, are to be stored under `fonts`. The fantastic [Open Sans](http://opensans.com) font is included with the theme. If you want to add others, simply add the files under the `fonts` directory and edit `scss/_fonts.css` as appropriate. See the [Compass website](http://compass-style.org/reference/compass/helpers/font-files/) for information about using webfonts.
 
 ### Theme Templates
 
@@ -77,4 +77,4 @@ The template files included in this theme are a modified version of those includ
 
 ### Languages
 
-Theme Boilerplate is fully ready for localization. No language templates are provided, but it should be fairly trivial to generate a `.pot` file and add `.po` and `.mo` files as required.
+Theme Boilerplate is fully ready for localization. No language templates are provided, but it should be fairly trivial to generate a `.pot` file and add `.po` and `.mo` files as required. All `.pot`, `.po` and `.mo` files should be placed in a `languages` directory.
