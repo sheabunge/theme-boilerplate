@@ -1,0 +1,35 @@
+{
+	"name"       : "bungeshea/theme-boilerplate",
+	"description": "A starter theme for WordPress, designed to give you a base to use when creating your own WordPress theme.",
+	"keywords"   : ["wordpress", "grunt", "hybrid", "scss", "compass"],
+	"type"       : "wordpress-theme",
+	"homepage"   : "https://github.com/bungeshea/theme-boilerplate",
+	"license"    : "MIT",
+	"authors"    : [
+		{
+			"name"    : "Shea Bunge",
+			"email"   : "info@bungeshea.com",
+			"homepage": "http://bungeshea.com/"
+		}
+	],
+	"support"    : {
+		"issues": "https://github.com/bungeshea/theme-boilerplate/issues",
+		"source": "https://github.com/bungeshea/theme-boilerplate"
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url" : "http://rarst.net"
+		}
+	],
+	"require"    : {
+		"php"                : ">=5.3",
+		"composer/installers": "~1.0",
+		"rarst/hybrid-core"  : "~1.6"
+	},
+	"extra": {
+		"installer-paths": {
+			"./library/": ["rarst/hybrid-core"]
+		}
+	}
+}
