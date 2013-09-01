@@ -3,6 +3,11 @@
 *.min.js
 *.map
 
+# Composer
+composer.lock
+vendor/
+library/
+
 # Grunt
 node_modules/
 
