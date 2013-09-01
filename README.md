@@ -35,7 +35,7 @@ Also open up `scss/style.scss` and `package.json` and manually replace the infor
 
 ## Building the theme
 
-Theme Boilerplate requires [Composer](http://getcomposer.org/download/), [Grunt](http://gruntjs.com/getting-started), and [Compass](https://github.com/bungeshea/theme-boilerplate/wiki/Installing Compass) to be installed.
+Theme Boilerplate requires [Composer](http://getcomposer.org/download/), [Grunt](http://gruntjs.com/getting-started), and [Compass](https://github.com/bungeshea/theme-boilerplate/wiki/Installing-Compass) to be installed.
 
 Once you have installed those three software by following the instructions on the linked pages, you can ready to build the theme. Initially, you will need to install Composer packages and Node modules:
 
