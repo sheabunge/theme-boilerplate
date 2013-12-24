@@ -53,15 +53,26 @@ module.exports = function (grunt) {
 		},
 
 		/**
-		 * Lint the Gruntfile and
-		 * source JavaScript with JSHint
+		 * Lint JavaScript
 		 */
 		jshint: {
 			options: {
-				jshintrc: '.jshintrc',
-				'force': true
+				force: true,
+				smarttabs: true,
+				eqeqeq: true,
+				newcap: true,
+				eqnull: true
 			},
-			gruntfile: ['Gruntfile.js'],
+			gruntfile: {
+				options: {
+					globals: {
+						module: true
+					}
+				},
+				files: {
+					'Gruntfile.js'
+				}
+			},
 			source: ['js/source/**/*.js']
 		},
 
