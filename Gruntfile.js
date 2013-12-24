@@ -1,10 +1,10 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 	'use strict';
 
-	/* Load all Grunt tasks */
-	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
+
 		pkg: grunt.file.readJSON('package.json'),
 
 		/**
